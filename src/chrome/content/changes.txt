@@ -1,0 +1,184 @@
+Cookies Manager+ changes log
+
+Legend:
+
++ = Added
+! = Fixed
+* = Changed
+- = Removed
+
+
+v1.6 (2011-05-)
+	+ support for FF nightly 15.0a1
+	+ selectable list for date format field
+	+ changes log in help menu
+	+ info row highlighting
+	+ when focused on a info row pressing up/down cursor keys will switch to previous/next row (just like using tab key)
+	+ synchronize native cookies viewer window with CM+ window. When selected cookie(s) in native cookie viewer window it will automatically select same cookie(s) in CM+ window (a temporary work around until added folders in CM+)
+	+ when delete confirmation prompt showed, the cookie in question is highlighted in bold in the list
+	+ deleting more then one selected cookies one-by-one will display deleted cookies in italic, with line-through
+	+ multiple selection is now restored after window closed
+	+ when editing multiple cookies at once the default values can be selected from new dropdown menu
+	+ expired cookies highlighted in the tree
+	+ expires progress meter to the tree
+	+ expires countdown to the tree
+	+ new filter option "Relaxed domain". When activated and entered sub2.sub1.domain.com as filter it will match cookies with domains: sub2.sub1.domain.com, .sub1.domain.com and .domain.com (note: starts with a dot, which means any sub-domains)
+	+ open CM+ with currently opened website's domain as filter (via toolbar button or tools/app menu). This will temporary activate "Relaxed domain" filter, pressing "Refresh" button or changing filter's value will automatically restore previous settings.
+	+ in add/edit window pressing enter key while focused on a checkbox will save the cookie
+	+ ability submit empty password during backup (it will save in not encrypted file)
+	+ custom default export/backup filename can now contain # sign which will be replace with current date
+	+ default filename preview in options window
+	+ delete confirmation prompt is now remembers it's previous position on screen
+	+ after file successfully saved it asks if user wants open the folder with saved file
+	+ date spinners ([+][-] buttons) now repeat when clicked and hold
+	+ year in calendar can now be entered manually
+	+ option to set CM+ as default cookies viewer
+	+ select restored cookies
+	+ non-ASCII characters in path are now automatically escaped on save
+	+ new options in context menu on input fields in Add/Edit window to escape/unescape non-ASCII characters
+	+ backup will encode \t, \n , \r  and % characters into it's %HEX charcode
+	+ IPv6 support
+	+ icons to CM+ windows
+	* data in backup files is now sorted
+	* optimized upgrade script its now runs only once per session
+	* disabled text in add/edit window is now selectable, it helps if it doesn't fit and need scroll
+	* canceled backup password entering will cancel backup process all together
+	* position of date spinners ([+][-] buttons). They are now vertical on right side of input fields, instead of horizontal, underneath
+	* elements order in edit window (when navigating with TAB button)
+	* significantly improved performance of invert selection
+	* improved backup encryption algorithm
+	* significantly improved performance of encryption/decryption large amount of cookies
+	* protected cookies (by Cookie Culler) are now always highlighted (grey font and italic font) even when enabled "allow delete protected"
+	! last opened tabs in options window not remembered
+	! some warning possibly logged in console when CookieCuller is not installed or disabled
+	! possible export/backup corruption when cookie data contains $ sign in combination with some characters ($&, $', $$)
+	! export/backup issue if cookie data contained an export template tags
+	! issues in view menu with expire progress/countdown options
+	! main window would not resize when activated more info fields that fit in window
+	! empty info fields after sorting/resetting and no cookies selected.
+	! some of the info rows would fail changing order when CookieCuller is not installed or dis-activated
+	! "protected" text would not display after disable then enable CookieCuller support
+	! not all cookies displayed after deleted a cookie
+	! errors in console when dragged selected text over info fields
+	! double click on checkbox in cookies list opens edit window
+	! "spin" buttons ([+], [-]) active even when disabled
+	! progressmeter wasn't filling in it's box in Firefox 6.0a1 with aero theme
+	! refresh would change currently focused (not selected) item in the list and scroll to it
+	! export multiple cookies into clipboard or file would add extra new lines between cookies
+	! incorrect message showed if export/backup file was saved unsuccessfully
+	! incorrect cookie highlighted when deleting multiple cookies and confirmation prompt showed
+	! incorrectly displayed checkboxes in cookies list on some themes
+	! manually input date or time at add/edit window and hit ENTER key would not save the new date
+	! changing date via mouse wheel, up/down keys or [+]/[-] buttons would change caret position
+	! mouse scroll wheel sometimes would change number twice in date input fields
+	! in some circumstances a {ISPROTECTED_RAW} tag was left in the backup file
+	! restoring cookies from saved file with CookieCuller activated could incorrectly restore "protected" state if cookie's value contained a tab character
+	! pressing CTRL + A in cookies list would highlight "Search" text next to filter field
+	! input fields disabled in edit cookies window in FF 16.0a1
+	! tree text not visible on dark themes
+	- {CONTENT_RAW} in export template is no longer used (though it still being parsed for backwards compatibility)
+	- alert when user canceled password at "remove password" dialog
+
+v1.5.1 (2011-04-18)
+	+ default filename option for backup files
+	* auto refresh is enabled if CM+ updated or disabled if new install (still debating about this one)
+	! general tab in options window is not focused by default
+
+v1.5 (2011-04-17)
+	+ support for "protected" flag in backup/restore (only when CoockieCuller support enabled)
+	+ encrypt backup files
+	+ added "always on top" option in view menu
+	* auto refresh is now disabled by default
+	* moved CM+ in app menu of FF4 from root to "Web Developer" submenu
+	! reset tree columns order is now disabled if order is not changed
+	! export template would only replace once each tag.
+	! backup would not overwrite already existing file even if user chose so
+	! custom templates not saved after reset
+	- removed cookie info preferences, it's no longer uses prefs.js
+
+v1.4 (2011-04-16)
+	+ expiration count down information
+	+ expiration progress meter now shows in realtime
+	+ ALT+L will focus on cookies list
+	+ list view options into right click (context) menu (column picker/sort)
+	+ shortcut keys for buttons in Add/Edit cookies window
+	+ shortcut keys for cookie info fields in main window
+	+ backup/restore selected or all cookies. The backup file is standard netscape format, which can be used to import into other browsers. Restore can also import file created by IE export.
+	+ bumped support for nightly v6.0a1
+	+ SHIFT+F10 on cookies list will open context menu
+	+ move up/down options to context menu at info fields
+	+ menu bar
+	* moved "protected" field to the end of the list by default
+	! ALT+P/ALT+U will lock cookie and loose focus on list
+	! when pressed up/down cursor key in the list and list scrolled, it would not display data about newly selected cookie
+	- "more..." button, replaced by menu bar
+
+v1.3 (2011-04-04)
+	+ sorting cookies info rows via drag'n drop
+	+ cookies info rows selection in options window
+	+ export selected cookies to file
+	- "Show extra info columns in the list" option. The extra information columns are still available via column picker dropdown menu.
+
+v1.2 (2011-04-02)
+	+ FF4 app menu item (orange button)
+	+ labels on all dropdown buttons
+	+ bumped support for FF4.2a1pre
+	+ CookieCuller support
+	+ copy to clipboard cookie data using user-defined template
+	+ checkboxes in list box
+	+ ability block domain from using cookies (SHIFT + DEL or via context menu)
+	+ changes log in options window
+	* refresh button is always visible
+	* checkboxes in add cookie window are now disabled
+	! context menu keyboard button doesn't do anything in cookies list
+	! tree extra info not showed correctly after window opened
+	! sorting columns would not change direction
+	! list scroll with up/down scrollbar buttons was not possible when a cookie selected
+	! after delete confirmation closed only one cookie selected (even if some/all selected cookies weren't deleted)
+
+v1.1 (2011-03-20)
+	+ button to open native Firefox Cookies Manager
+	+ option to ignore sub-domains during sort
+	+ dropdown at the end of search field with options to search in host, name and/or content as well as case sensitive
+	+ more accessible-friendly, most controls are accessible via keyboard
+	+ optional visual representation when selected cookie expires
+	* native cookies manager is no long replaced, it now has a button to open Cookies Manager+ instead. A hidden bool preference "alwaysusecmp" can be set to enable replacement.
+	* when "Auto refresh" is disabled, selecting/clicking on a cookie will update information with the latest
+	! saving session cookie would delete it instead
+	! del key had to be pressed twice after delete confirmation showed
+	! deleted somewhere/somehow else cookies weren't removed from the list when auto refresh activated
+	! an edited cookie would not be saved if it was deleted while editor was opened.
+	! "more info" link in options window would not open in FF3
+
+v1.0 (2011-03-13)
+	+ multiple cookies edit (content, send for and expire date only)
+	+ multiple selection with mouse by clicking on left part of the list
+	+ ability save changes only for selected fields
+	+ optional columns for cookie content, path and expiration date
+	+ displaying number of deleting cookies at confirm delete prompt
+	+ confirmation for overwrite cookie prompt if saving cookie already exist
+	+ select all / invert selection options to the right click on the cookies list
+	+ "Search/Filter" button changes label based on enabled settings
+	+ ability save cookies with empty content and path
+	+ popup calendar highlights current local date (not just cookie's date)
+	+ version number to the cookies view window title
+	+ customizable expiration date format (using PHP date() format: http://php.net/manual/function.date.php)
+	+ cookie list columns are now can be moved around
+	+ shows at window title total number of cookies, number of showed cookies and number of selected
+	+ extra information (optional) such as created date, last access date, http only, policy and status
+	+ columns for extra information (optional)
+	+ tooltips in option window
+	+ selectable "Http Only" cookie parameter at edit cookie window (in previous versions this parameter was forced to "false"
+	* new name. Now it's Cookies Manager+
+	* rewrote almost entire extension
+	* redesigned GUI
+	* save button will be disabled when name or host fields are empty
+	* cookie info row no longer selects when clicking on row header when the row doesn't display cookie's content (multiple selection or no selection at all)
+	* when multiple cookies selected and they all have a common property (name, path, host, etc), that property(s) value will be shown instead of "<multiple selection>" string.
+	* minimum column width was decreased allowing smaller columns
+	! multiple selections now restored after edit window closed or deletion canceled
+	! some text in popup calendar barely visible on some systems
+	! options window on Mac OS
+	! right click on cookies list doesn't select cookies
+	- "Select" option from context menu at a cookie info row header, it selects
+	- select all / invert buttons. They were replaced by checkbox and context menu options on cookies list

@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+
+<window id="cookiesmanagerplusWindow"
+				xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+				onload="coomanPlusPlusLoad()"
+				persist="width height screenX screenY version"
+				width="530"
+				height="400"
+				version=""
+>
+<!--this file will attempt transfer saved persist data from pre-v1.6 -->
+<textbox id="lookupcriterium" persist="filter" filter=""/>
+<tree id="cookiesTree" persist="scrollPos selectedHost selectedPath selectedName sortDirection sortResource hidden" scrollPos="" selectedHost="" selectedPath="" selectedName="" sortDirection="ascending" sortResource="rawHost"/>
+<treecol id="sel" persist="ordinal"/>
+<treecol id="rawHost" persist="width hidden ordinal"/>
+<treecol id="name" persist="width hidden ordinal"/>
+<treecol id="value" persist="width hidden ordinal"/>
+<treecol id="path" persist="width hidden ordinal"/>
+<treecol id="expires" persist="width hidden ordinal"/>
+<treecol id="creationTimeString" persist="width hidden ordinal"/>
+<treecol id="lastAccessedString" persist="width hidden ordinal"/>
+<treecol id="isHttpOnlyString" persist="width hidden ordinal"/>
+<treecol id="policyString" persist="width hidden ordinal"/>
+<treecol id="statusString" persist="width hidden ordinal"/>
+<treecol id="isProtected" persist="width hidden ordinal"/>
+<rows id="cookieInfoRows" persist="order"/>
+<row id="row_name" persist="collapsed"/>
+<row id="row_value" persist="collapsed"/>
+<row id="row_host" persist="collapsed"/>
+<row id="row_path" persist="collapsed"/>
+<row id="row_isSecure" persist="collapsed"/>
+<row id="row_expires" persist="collapsed"/>
+<progressmeter id="expireProgress" persist="collapsed" collapsed="true"/>
+<textbox id="expireProgressText" persist="collapsed"/>
+<row id="row_creationTime" collapsed="true" persist="collapsed"/>
+<row id="row_lastAccessed" collapsed="true" persist="collapsed"/>
+<row id="row_isHttpOnly" collapsed="true" persist="collapsed"/>
+<row id="row_policy" collapsed="true" persist="collapsed"/>
+<row id="row_status" collapsed="true" persist="collapsed"/>
+<row id="row_isProtected" persist="collapsed"/>
+<script>
+function coomanPlusPlusLoad()
+{
+	var d = window.arguments[0].document;
+	d.getElementById("cookiesmanagerplusWindow").setAttribute("width", document.getElementById("cookiesmanagerplusWindow").width);
+	d.getElementById("cookiesmanagerplusWindow").setAttribute("height", document.getElementById("cookiesmanagerplusWindow").height);
+	d.getElementById("cookiesmanagerplusWindow").setAttribute("screenX", document.getElementById("cookiesmanagerplusWindow").getAttribute("screenX"));
+	d.getElementById("cookiesmanagerplusWindow").setAttribute("screenY", document.getElementById("cookiesmanagerplusWindow").getAttribute("screenY"));
+	d.getElementById("cookiesmanagerplusWindow").width = document.getElementById("cookiesmanagerplusWindow").width;
+	d.getElementById("cookiesmanagerplusWindow").height = document.getElementById("cookiesmanagerplusWindow").height;
+	d.getElementById("cookiesmanagerplusWindow").screenX = document.getElementById("cookiesmanagerplusWindow").getAttribute("screenX");
+	d.getElementById("cookiesmanagerplusWindow").screenY = document.getElementById("cookiesmanagerplusWindow").getAttribute("screenY");
+	d.getElementById("lookupcriterium").setAttribute("filter", document.getElementById("lookupcriterium").getAttribute("filter"));
+	d.getElementById("cookiesTree").setAttribute("selectedHost", document.getElementById("cookiesTree").getAttribute("selectedHost"));
+	d.getElementById("cookiesTree").setAttribute("selectedPath", document.getElementById("cookiesTree").getAttribute("selectedPath"));
+	d.getElementById("cookiesTree").setAttribute("selectedName", document.getElementById("cookiesTree").getAttribute("selectedName"));
+	d.getElementById("cookiesTree").setAttribute("sortDirection", document.getElementById("cookiesTree").getAttribute("sortDirection"));
+	d.getElementById("cookiesTree").setAttribute("sortResource", document.getElementById("cookiesTree").getAttribute("sortResource"));
+	d.getElementById("cookiesTree").setAttribute("hidden", document.getElementById("cookiesTree").hidden);
+	d.getElementById("cookiesTree").hidden = document.getElementById("cookiesTree").hidden;
+	if(document.getElementById("cookiesTree").scrollPos)
+		d.getElementById("cookiesTree").setAttribute("scrollPos", document.getElementById("cookiesTree").scrollPos);
+	d.getElementById("cookiesTree").scrollPos = document.getElementById("cookiesTree").scrollPos;
+	d.getElementById("sel").setAttribute("ordinal", document.getElementById("sel").getAttribute("ordinal"));
+	d.getElementById("rawHost").setAttribute("ordinal", document.getElementById("rawHost").getAttribute("ordinal"));
+	if(document.getElementById("rawHost").width)
+	{
+		d.getElementById("rawHost").setAttribute("width", document.getElementById("rawHost").width);
+		d.getElementById("rawHost").width = document.getElementById("rawHost").width;
+	}
+	if(document.getElementById("rawHost").hidden)
+	{
+		d.getElementById("rawHost").setAttribute("hidden", document.getElementById("rawHost").hidden);
+		d.getElementById("rawHost").hidden = document.getElementById("rawHost").hidden;
+	}
+	d.getElementById("name").setAttribute("ordinal", document.getElementById("name").getAttribute("ordinal"));
+	if(document.getElementById("name").width)
+	{
+		d.getElementById("name").setAttribute("width", document.getElementById("name").width);
+		d.getElementById("name").width = document.getElementById("name").width;
+	}
+	if(document.getElementById("name").hidden)
+	{
+		d.getElementById("name").setAttribute("hidden", document.getElementById("name").hidden);
+		d.getElementById("name").hidden = document.getElementById("name").hidden;
+	}
+	d.getElementById("value").setAttribute("ordinal", document.getElementById("value").getAttribute("ordinal"));
+	if(document.getElementById("value").width)
+	{
+		d.getElementById("value").setAttribute("width", document.getElementById("value").width);
+		d.getElementById("value").width = document.getElementById("value").width;
+	}
+	if(document.getElementById("value").hidden)
+	{
+		d.getElementById("value").setAttribute("hidden", document.getElementById("value").hidden);
+		d.getElementById("value").hidden = document.getElementById("value").hidden;
+	}
+	d.getElementById("path").setAttribute("ordinal", document.getElementById("path").getAttribute("ordinal"));
+	if(document.getElementById("path").width)
+	{
+		d.getElementById("path").setAttribute("width", document.getElementById("path").width);
+		d.getElementById("path").width = document.getElementById("path").width;
+	}
+	if(document.getElementById("path").hidden)
+	{
+		d.getElementById("path").setAttribute("hidden", document.getElementById("path").hidden);
+		d.getElementById("path").hidden = document.getElementById("path").hidden;
+	}
+	d.getElementById("expires").setAttribute("ordinal", document.getElementById("expires").getAttribute("ordinal"));
+	if(document.getElementById("expires").width)
+	{
+		d.getElementById("expires").setAttribute("width", document.getElementById("expires").width);
+		d.getElementById("expires").width = document.getElementById("expires").width;
+	}
+	if(document.getElementById("expires").hidden)
+	{
+		d.getElementById("expires").setAttribute("hidden", document.getElementById("expires").hidden);
+		d.getElementById("expires").hidden = document.getElementById("expires").hidden;
+	}
+	d.getElementById("creationTimeString").setAttribute("ordinal", document.getElementById("creationTimeString").getAttribute("ordinal"));
+	if(document.getElementById("creationTimeString").width)
+	{
+		d.getElementById("creationTimeString").setAttribute("width", document.getElementById("creationTimeString").width);
+		d.getElementById("creationTimeString").width = document.getElementById("creationTimeString").width;
+	}
+	if(document.getElementById("creationTimeString").hidden)
+	{
+		d.getElementById("creationTimeString").setAttribute("hidden", document.getElementById("creationTimeString").hidden);
+		d.getElementById("creationTimeString").hidden = document.getElementById("creationTimeString").hidden;
+	}
+	d.getElementById("lastAccessedString").setAttribute("ordinal", document.getElementById("lastAccessedString").getAttribute("ordinal"));
+	if(document.getElementById("lastAccessedString").width)
+	{
+		d.getElementById("lastAccessedString").setAttribute("width", document.getElementById("lastAccessedString").width);
+		d.getElementById("lastAccessedString").width = document.getElementById("lastAccessedString").width;
+	}
+	if(document.getElementById("lastAccessedString").hidden)
+	{
+		d.getElementById("lastAccessedString").setAttribute("hidden", document.getElementById("lastAccessedString").hidden);
+		d.getElementById("lastAccessedString").hidden = document.getElementById("lastAccessedString").hidden;
+	}
+	d.getElementById("isHttpOnlyString").setAttribute("ordinal", document.getElementById("isHttpOnlyString").getAttribute("ordinal"));
+	if(document.getElementById("isHttpOnlyString").width)
+	{
+		d.getElementById("isHttpOnlyString").setAttribute("width", document.getElementById("isHttpOnlyString").width);
+		d.getElementById("isHttpOnlyString").width = document.getElementById("isHttpOnlyString").width;
+	}
+	if(document.getElementById("isHttpOnlyString").hidden)
+	{
+		d.getElementById("isHttpOnlyString").setAttribute("hidden", document.getElementById("isHttpOnlyString").hidden);
+		d.getElementById("isHttpOnlyString").hidden = document.getElementById("isHttpOnlyString").hidden;
+	}
+	d.getElementById("policyString").setAttribute("ordinal", document.getElementById("policyString").getAttribute("ordinal"));
+	if (document.getElementById("policyString").width)
+	{
+		d.getElementById("policyString").setAttribute("width", document.getElementById("policyString").width);
+		d.getElementById("policyString").width = document.getElementById("policyString").width;
+	}
+	if (document.getElementById("policyString").hidden)
+	{
+		d.getElementById("policyString").setAttribute("hidden", document.getElementById("policyString").hidden);
+		d.getElementById("policyString").hidden = document.getElementById("policyString").hidden;
+	}
+	d.getElementById("statusString").setAttribute("ordinal", document.getElementById("statusString").getAttribute("ordinal"));
+	if (document.getElementById("statusString").width)
+	{
+		d.getElementById("statusString").setAttribute("width", document.getElementById("statusString").width);
+		d.getElementById("statusString").width = document.getElementById("statusString").width;
+	}
+	if (document.getElementById("statusString").hidden)
+	{
+		d.getElementById("statusString").setAttribute("hidden", document.getElementById("statusString").hidden);
+		d.getElementById("statusString").hidden = document.getElementById("statusString").hidden;
+	}
+	d.getElementById("isProtected").setAttribute("ordinal", document.getElementById("isProtected").getAttribute("ordinal"));
+	if (document.getElementById("isProtected").width)
+	{
+		d.getElementById("isProtected").setAttribute("width", document.getElementById("isProtected").width);
+		d.getElementById("isProtected").width = document.getElementById("isProtected").width;
+	}
+	if (document.getElementById("isProtected").hidden)
+	{
+		d.getElementById("isProtected").setAttribute("hidden", document.getElementById("isProtected").hidden);
+		d.getElementById("isProtected").hidden = document.getElementById("isProtected").hidden;
+	}
+	d.getElementById("cookieInfoRows").setAttribute("order", document.getElementById("cookieInfoRows").getAttribute("order"));
+	d.getElementById("row_name").setAttribute("collapsed", document.getElementById("row_name").collapsed);
+	d.getElementById("row_value").setAttribute("collapsed", document.getElementById("row_value").collapsed);
+	d.getElementById("row_host").setAttribute("collapsed", document.getElementById("row_host").collapsed);
+	d.getElementById("row_path").setAttribute("collapsed", document.getElementById("row_path").collapsed);
+	d.getElementById("row_isSecure").setAttribute("collapsed", document.getElementById("row_isSecure").collapsed);
+	d.getElementById("row_expires").setAttribute("collapsed", document.getElementById("row_expires").collapsed);
+	d.getElementById("expireProgress").setAttribute("collapsed", document.getElementById("expireProgress").collapsed);
+	d.getElementById("expireProgressText").setAttribute("collapsed", document.getElementById("expireProgressText").collapsed);
+	d.getElementById("row_creationTime").setAttribute("collapsed", document.getElementById("row_creationTime").collapsed);
+	d.getElementById("row_lastAccessed").setAttribute("collapsed", document.getElementById("row_lastAccessed").collapsed);
+	d.getElementById("row_isHttpOnly").setAttribute("collapsed", document.getElementById("row_isHttpOnly").collapsed);
+	d.getElementById("row_policy").setAttribute("collapsed", document.getElementById("row_policy").collapsed);
+	d.getElementById("row_status").setAttribute("collapsed", document.getElementById("row_status").collapsed);
+	d.getElementById("row_isProtected").setAttribute("collapsed", document.getElementById("row_isProtected").collapsed);
+	d.getElementById("row_name").collapsed = document.getElementById("row_name").collapsed;
+	d.getElementById("row_value").collapsed = document.getElementById("row_value").collapsed;
+	d.getElementById("row_host").collapsed = document.getElementById("row_host").collapsed;
+	d.getElementById("row_path").collapsed = document.getElementById("row_path").collapsed;
+	d.getElementById("row_isSecure").collapsed = document.getElementById("row_isSecure").collapsed;
+	d.getElementById("row_expires").collapsed = document.getElementById("row_expires").collapsed;
+	d.getElementById("expireProgress").collapsed = document.getElementById("expireProgress").collapsed;
+	d.getElementById("expireProgressText").collapsed = document.getElementById("expireProgressText").collapsed;
+	d.getElementById("row_creationTime").collapsed = document.getElementById("row_creationTime").collapsed;
+	d.getElementById("row_lastAccessed").collapsed = document.getElementById("row_lastAccessed").collapsed;
+	d.getElementById("row_isHttpOnly").collapsed = document.getElementById("row_isHttpOnly").collapsed;
+	d.getElementById("row_policy").collapsed = document.getElementById("row_policy").collapsed;
+	d.getElementById("row_status").collapsed = document.getElementById("row_status").collapsed;
+	d.getElementById("row_isProtected").collapsed = document.getElementById("row_isProtected").collapsed;
+	window.close();
+}
+</script>
+</window>

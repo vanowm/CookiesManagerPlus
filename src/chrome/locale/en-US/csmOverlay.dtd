@@ -1,0 +1,5 @@
+<!ENTITY	cookiesmanagerplus.label							"Cookies Manager+">
+<!ENTITY	cookiesmanagerplus.accesskey					"E">
+<!ENTITY	cookiesmanagerplus.current.label			"Cookies Manager+">
+<!ENTITY	cookiesmanagerplus.current.tooltip		"Show cookies matching currently opened domain">
+<!ENTITY	cookiesmanagerplus.current.accesskey	"E">

@@ -1,0 +1,394 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+#cookieInfoBox
+{
+	border: 1px solid black;
+}
+tree
+{
+	min-height: 7em;
+}
+treecol:not([type="checkbox"]):not([id="colhid"])
+{
+	min-width: 3em;
+}
+treecol#rawHost,
+treecol#name,
+treecol#content
+{
+	min-width: 4em;
+}
+
+#expireProgressText[disabled="true"][progress="true"]
+{
+	text-shadow: 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog
+}
+#expireProgressText[disabled="true"][progress="true"]:-moz-system-metric(windows-classic)
+{
+	text-shadow: 0 0 0.5em -moz-Dialog, 0 0 0.5em -moz-Dialog, 0 0 0.5em -moz-Dialog, 0 0 0.5em -moz-Dialog, 0 0 0.5em -moz-Dialog, 0 0 0.5em -moz-Dialog, 0 0 0.5em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog, 0 0 0.2em -moz-Dialog
+}
+#expireProgressText[disabled="true"]
+{
+	color: -moz-FieldText;
+	font-style: italic;
+}
+
+#ifl_expires[expired="true"]:not([multi="true"]),
+#expireProgressText[disabled="true"][expired="true"]
+{
+	color: red;
+}
+/*
+progressmeter[text="true"] .progress-bar
+{
+	opacity: 1.0;
+}
+*/
+
+progressmeter
+{
+	min-width: 0;
+	min-height: 0;
+	margin: 2px -2px 2px -2px;
+}
+
+progressmeter:-moz-system-metric(windows-classic)
+{
+	margin: 0 -2px 0 -2px;
+}
+
+row[dragable="true"] > hbox:-moz-first-node,
+row[dragable="true"] > hbox:-moz-first-node > label
+{
+	cursor: -moz-grab;
+}
+row[dragable="true"]
+{
+	border-top: 1px dotted #e1e1e1;
+	margin: 0 2px 0 2px;
+}
+row[dragable="true"][last="true"]
+{
+	border-bottom: 1px dotted transparent;
+	margin: 0 2px 0 2px;
+}
+row[dragable="true"][first="true"]
+{
+	border-top-color: transparent;
+}
+row[dragable="true"][dragover="true"][dragupdown="up"]
+{
+	border-top: 1px solid black;
+}
+#row_end[dragover="true"],
+row[dragable="true"][dragover="true"][dragupdown="down"]
+{
+	border-bottom: 1px solid black;
+}
+
+#row_end
+{
+	height: 0;
+	border-bottom: 1px dotted transparent;
+	margin: 0 2px 0 2px;
+}
+
+treechildren::-moz-tree-row(odd)
+{
+	background-color:#F5F5F5;
+}
+/*
+treechildren::-moz-tree-row(odd, selected) {
+	background-color: #E7E7E7;
+}
+treechildren::-moz-tree-row(even, selected) {
+	background-color: #E0E0E0;
+}
+*/
+	/* css for checked cells */
+treechildren::-moz-tree-checkbox
+{
+	list-style-image: url("chrome://cookiesmaster/skin/images/checkbox.png");
+	-moz-image-region: rect(0px 28px 14px 14px);
+}
+treechildren::-moz-tree-checkbox(checked)
+{
+	-moz-image-region: rect(0px 14px 14px 0px);
+}
+
+treechildren::-moz-tree-cell-text(updated)
+{
+	color: green;
+}
+treechildren::-moz-tree-cell-text(expired)
+{
+	text-decoration: line-through;
+	color: red;
+}
+treechildren::-moz-tree-cell-text(protected)
+{
+	font-style: italic;
+	color: GrayText;
+}
+treechildren::-moz-tree-cell-text(expired, protected)
+{
+	font-style: italic;
+	color: brown;
+}
+
+treechildren::-moz-tree-row(selected),
+treechildren::-moz-tree-row(selected, focus)
+{
+	background-color: Highlight;
+}
+treechildren::-moz-tree-cell-text(selected),
+treechildren::-moz-tree-cell-text(selected, focus)
+{
+	color: Highlighttext;
+}
+treechildren::-moz-tree-cell-text(selected, expired),
+treechildren::-moz-tree-cell-text(selected, focus, expired)
+{
+	color: pink;
+}
+treechildren::-moz-tree-cell-text(protected, selected),
+treechildren::-moz-tree-cell-text(protected, selected, focus)
+{
+	font-style: italic;
+	color: lightgrey;
+}
+treechildren::-moz-tree-cell-text(protected, selected, expired),
+treechildren::-moz-tree-cell-text(protected, selected, focus, expired)
+{
+	font-style: italic;
+	color: #FFDFDF;
+}
+treechildren::-moz-tree-cell-text(selected, deleted),
+treechildren::-moz-tree-cell-text(selected, focus, deleted)
+{
+	color: Highlighttext;
+}
+
+treechildren::-moz-tree-row(current)
+{
+	border: 1px dashed black;
+}
+treechildren::-moz-tree-row(current, selected)
+{
+	border: 1px dotted black;
+}
+treechildren::-moz-tree-row(current, focus)
+{
+	border: 1px dashed Highlight;
+}
+treechildren::-moz-tree-row(current, focus, selected)
+{
+	border: 1px dotted Highlighttext;
+}
+
+treechildren::-moz-tree-cell-text(deleted),
+treechildren::-moz-tree-cell-text(deleted, focus),
+treechildren::-moz-tree-cell-text(deleted, selected),
+treechildren::-moz-tree-cell-text(deleted, selected, focus),
+treechildren::-moz-tree-cell-text(deleted, current),
+treechildren::-moz-tree-cell-text(deleted, current, focus),
+treechildren::-moz-tree-cell-text(deleted, current, selected),
+treechildren::-moz-tree-cell-text(deleted, current, selected, focus)
+{
+	font-style: italic;
+	text-decoration: line-through;
+	font-weight: bold;
+	color: black;
+}
+
+treechildren::-moz-tree-cell-text(deleting),
+treechildren::-moz-tree-cell-text(deleting, focus),
+treechildren::-moz-tree-cell-text(deleting, selected),
+treechildren::-moz-tree-cell-text(deleting, selected, focus),
+treechildren::-moz-tree-cell-text(deleting, current),
+treechildren::-moz-tree-cell-text(deleting, current, focus),
+treechildren::-moz-tree-cell-text(deleting, current, selected),
+treechildren::-moz-tree-cell-text(deleting, current, selected, focus)
+{
+	font-weight: bold;
+	color: white
+}
+treechildren::-moz-tree-row(deleted),
+treechildren::-moz-tree-row(deleted, focus),
+treechildren::-moz-tree-row(deleted, selected),
+treechildren::-moz-tree-row(deleted, selected, focus),
+treechildren::-moz-tree-row(deleted, current),
+treechildren::-moz-tree-row(deleted, current, focus),
+treechildren::-moz-tree-row(deleted, current, selected),
+treechildren::-moz-tree-row(deleted, current, selected, focus)
+{
+	background-color: pink;
+}
+
+treechildren::-moz-tree-row(deleting),
+treechildren::-moz-tree-row(deleting, focus),
+treechildren::-moz-tree-row(deleting, selected),
+treechildren::-moz-tree-row(deleting, selected, focus),
+treechildren::-moz-tree-row(deleting, current),
+treechildren::-moz-tree-row(deleting, current, focus),
+treechildren::-moz-tree-row(deleting, current, selected),
+treechildren::-moz-tree-row(deleting, current, selected, focus)
+{
+	border: 1px solid pink;
+	background-color: red;
+}
+
+treechildren::-moz-tree-progressmeter
+{
+  color: #00D228;
+}
+treechildren::-moz-tree-progressmeter(expired)
+{
+}
+treechildren::-moz-tree-progressmeter(session)
+{
+	border: 0;
+  background-color: transparent;
+}
+.infofield[multi="true"]
+{
+	font-style: italic;
+	color: GrayText;
+}
+
+.infofield[empty="true"]
+{
+	font-style: italic;
+	color: GrayText;
+	cursor:none;
+}
+
+treecol[type="checkbox"] > *
+{
+	display: none;
+}
+
+treecol[type="checkbox"] > label
+{
+	display: block;
+	-moz-appearance: checkbox;
+}
+
+#filtermenu,
+#filtermenu > hbox,
+#filtermenu > hbox > dropmarker
+{
+	min-width: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+}
+#filtermenu
+{
+	margin-left: -1px;
+}
+#lookupcriterium
+{
+	margin-right: 0;
+}
+
+.no-label * .button-text,
+#filtermenu * .button-text
+{
+	display: none;
+}
+
+#lookupstart
+{
+	min-width: 16px;
+	min-height: 16px;
+}
+
+#ifl_isProtected
+{
+	width: 0;
+}
+.inputbutton *
+{
+	padding:0;
+}
+
+
+.sortmenu[checked="true"][sortDirection="ascending"] > .menu-iconic-left,
+.sortmenu[checked="true"][sortDirection="descending"] > .menu-iconic-left
+{
+	-moz-appearance: menuimage;
+}
+.sortmenu[checked="true"][sortDirection="ascending"] > .menu-iconic-left > .menu-iconic-icon {
+	width: 9px;
+	height: 5px;
+  list-style-image: url("chrome://global/skin/tree/sort-asc.png");
+}
+
+.sortmenu[checked="true"][sortDirection="ascending"]:-moz-system-metric(windows-classic) > .menu-iconic-left > .menu-iconic-icon {
+	width: 9px;
+	height: 5px;
+  list-style-image: url("chrome://global/skin/tree/sort-asc-classic.png");
+}
+
+.sortmenu[checked="true"][sortDirection="descending"] > .menu-iconic-left > .menu-iconic-icon {
+	width: 9px;
+	height: 5px;
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.png");
+}
+
+.sortmenu[checked="true"][sortDirection="descending"]:-moz-system-metric(windows-classic) > .menu-iconic-left > .menu-iconic-icon {
+	width: 9px;
+	height: 5px;
+  list-style-image: url("chrome://global/skin/tree/sort-dsc-classic.png");
+}
+
+.contentPane
+{
+	margin-top: 0;
+	padding-top: 0;
+}
+
+toolbox
+{
+	border: none;
+	-moz-appearance: none;
+}
+
+.offset .menu-text
+{
+	-moz-padding-start: 1em;
+}
+
+row
+{
+	border: 1px dotted transparent;
+}
+row[highlight="true"][first="true"],
+row[highlight="true"][last="true"],
+row[highlight="true"]
+{
+	border-color: Highlight;
+}
+
+menulist:not([disabled="true"])
+{
+	cursor: pointer;
+}
+/*
+row[highlight="true"] > .inforowdataheader
+{
+	border: 1px dotted Highlight;
+	border-width: 1px 0 1px 1px;
+	margin: -1px 0 -1px -1px;
+	padding: 0;
+}
+row[highlight="true"] > .inforowdata
+{
+	border: 1px dotted Highlight;
+	border-width: 1px 1px 1px 0;
+	margin: -1px -1px -1px 0;
+	padding: 0;
+}
+*/
+

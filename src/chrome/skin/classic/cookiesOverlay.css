@@ -1,0 +1,29 @@
+#csm
+{
+	-moz-appearance: button;
+	min-width: 18px;
+	min-height: 18px;
+	padding-top:0;
+	padding-bottom:0;
+}
+#csm > toolbarbutton
+{
+	padding-top:0;
+	padding-bottom:0;
+}
+#csm > .toolbarbutton-menubutton-dropmarker
+{
+	padding-top:0;
+	padding-bottom:0;
+	margin:0;
+}
+#csm * .toolbarbutton-icon[label]:not([label=""]),
+#csm * .toolbarbutton-icon[type="menu"] {
+	-moz-margin-end: 0;
+}
+
+
+#csm * .toolbarbutton-text
+{
+	display: none;
+}

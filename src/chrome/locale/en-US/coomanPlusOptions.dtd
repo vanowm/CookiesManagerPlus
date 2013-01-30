@@ -1,0 +1,67 @@
+<!ENTITY	title.label														"Cookies Manager+ Options">
+<!ENTITY	options.delconfirm.label							'Ask delete confirmations'>
+<!ENTITY	options.autoupdate.label							'Auto refresh'>
+<!ENTITY	options.autoupdate.info								'Automatically update list if a cookie changed'>
+<!ENTITY	options.autofilter.label							'Auto search'>
+<!ENTITY	options.autofilter.info								'Search will perform while you type'>
+<!ENTITY	options.synchronize										"Synchronize native cookies viewer window">
+<!ENTITY	options.synchronize.info							"Selecting cookies in native Cookies viewer window will automatically select them in opened Cookies Manager+ window.">
+<!ENTITY	options.alwaysusecookiesmanagerplus				"Open Cookies Manager+ by default">
+<!ENTITY	options.alwaysusecookiesmanagerplus.info		"Use Cookies Manager+ as default cookies viewer">
+<!ENTITY	options.dateformat.label							'Date format'>
+<!ENTITY	options.dateformat.format							'Format'>
+<!ENTITY	options.dateformat.description				'Description'>
+<!ENTITY	options.dateformat.result							'Result'>
+<!ENTITY	options.dateformat.info								'You can change the way date showed. Either use template on right or type in your own template'>
+<!ENTITY	options.dateformat.moreinfo						'more info'>
+<!ENTITY	options.dateformat.presets						'Presets'>
+<!ENTITY	options.dateformat.showhide						'Show/hide date format list'>
+<!ENTITY	options.dateformat.tree								'Use space key or double click to add selected format'>
+<!ENTITY	options.simplehost.label							'Ignore sub-domains in sorting:'>
+<!ENTITY	options.simplehost.no									'None'>
+<!ENTITY	options.simplehost.no.desc						'sub1.domain.com &#8800; domain.com'>
+<!ENTITY	options.simplehost.root								'All'>
+<!ENTITY	options.simplehost.root.desc					'sub2.sub1.domain.com = domain.com'>
+<!ENTITY	options.simplehost.www								'Only www'>
+<!ENTITY	options.simplehost.www.desc						'www.domain.com = domain.com'>
+<!ENTITY	options.simplehost.info								'Path that starts with www will be sorted as without it, so example.com and www.example.com would be always showed near each other when sorted by path (Site)'>
+<!ENTITY	options.tab.general										'General'>
+<!ENTITY	options.tab.export										'Export'>
+<!ENTITY	options.tab.general.accesskey					'G'>
+<!ENTITY	options.tab.export.accesskey					'E'>
+<!ENTITY	option.export.clipboard.template			'Copy to clipboard template'>
+<!ENTITY	option.export.tab.clipboard 					'Clipboard'>
+<!ENTITY	option.export.tab.file 								'File'>
+<!ENTITY	option.export.tab.backup							'Backup'>
+<!ENTITY	option.export.tab.clipboard.accesskey	'L'>
+<!ENTITY	option.export.tab.file.accesskey			'F'>
+<!ENTITY	option.export.tab.backup.accesskey		'B'>
+<!ENTITY	option.export.file.template						'Save to file template'>
+<!ENTITY	option.export.backup									'Enable backup encryption'>
+<!ENTITY	option.export.backup.info							'You&#39;ll be asked to create a password during each backup.
+The password will be used to encrypt the backup data.
+You can leave password field blank to save it normally (unencrypted).'>
+
+<!ENTITY	options.restoreselection							"Select cookies from previous session">
+<!ENTITY	options.restoreselection.info					"Remember selection on window close and automatically select cookies next time CM+ opened">
+
+<!ENTITY	saveprefs.label												"Save and Close">
+<!ENTITY	justclose.label												"Just Close">
+<!ENTITY	result																"Result">
+<!ENTITY	options.cookieculler.label						'Enable Cookie Culler support'>
+<!ENTITY	options.cookieculler.delete.label			'Allow delete protected cookies'>
+<!ENTITY	reset																	"Reset to default">
+<!ENTITY	reset.accesskey												"R">
+<!ENTITY	backup.remove.password								"Remove password from a backup file">
+<!ENTITY	backup.notencrypted										"File not password protected">
+<!ENTITY	backup.decrypt.failed									"Error removing password">
+<!ENTITY	backup.decrypt.success								"Password was successfully removed">
+<!ENTITY	backup.already.encrypted							"Backup file already password protected">
+<!ENTITY	backup.password.remove								"Remove password from a backup file">
+<!ENTITY	backup.password.add										"Add password to a backup file">
+<!ENTITY	backup.password.notset								"Password was not set">
+<!ENTITY	backup.password.set										"Password was successfully set">
+<!ENTITY	export.filename												"Default filename">
+<!ENTITY	export.filename.result								"Result:">
+<!ENTITY	export.filename.info									"Leave blank to use auto-generated name">
+<!ENTITY	export.filename.info2									"# - will be replaced with current date stamp">

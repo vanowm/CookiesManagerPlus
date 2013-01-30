@@ -1,0 +1,96 @@
+.link,
+.link *
+{
+	-moz-appearance: none;
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+	min-height: 0;
+	background-color: transparent;
+}
+.link:focus
+{
+	border-color: transparent;
+}
+
+#test
+{
+	-moz-appearance: none;
+	border: none;
+	border-color: transparent;
+	background-color: transparent;
+	font-style: italic;
+}
+
+textbox[multiline="true"]
+{
+	font-family: "courier new", "times new roman", fixed, monospace;
+}
+treecol
+{
+	min-width:50px;
+}
+#dateList
+{
+	min-height: 10em;
+	height: 10em;
+}
+#dateList treechildren::-moz-tree-cell-text(primary)
+{
+	font-weight: bold;
+}
+#dateList treechildren::-moz-tree-cell-text(container)
+{
+	font-weight: normal;
+}
+#dateList treechildren::-moz-tree-cell-text(default)
+{
+	font-weight: normal;
+	font-style: italic;
+}
+
+.dateList[orient="vertical"],
+.dateList[orient="vertical"][state="collapsed"]
+{
+	cursor: auto;
+	border-width: 2px;
+	-moz-border-left-colors: ThreeDShadow ThreeDHighlight;
+	-moz-border-right-colors: ThreeDDarkShadow ThreeDFace;
+	-moz-border-top-colors: ThreeDShadow ThreeDHighlight;
+	-moz-border-bottom-colors: ThreeDDarkShadow ThreeDFace;
+	margin: 0 4px 0 4px;
+}
+/*
+.dateList[orient="vertical"]:not([state="collapsed"])
+{
+	border-top-width: 0;
+	padding-top: 1px;
+}
+*/
+.dateList[orient="vertical"][state="collapsed"]
+{
+	border-width: 2px 2px 2px 2px;
+}
+.dateList[orient="vertical"][focus="true"],
+.dateList[orient="vertical"][state="collapsed"][focus="true"]
+{
+	border: 1px dotted;
+	padding: 1px;
+}
+/*
+.dateList[orient="vertical"]:not([state="collapsed"])[focus="true"]
+{
+	padding-top: 0px;
+}
+*/
+
+menulist:not([disabled="true"])
+{
+	cursor: pointer;
+}
+
+
+textbox[readonly="true"]
+{
+	color: GrayText;
+}

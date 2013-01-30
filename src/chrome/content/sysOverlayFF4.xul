@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://cookiesmanagerplus/locale/csmOverlay.dtd">
+<overlay	id="coomanPlusFF4Overlay"
+					xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+>
+	<!-- Menu in Firefox 4.0+ App Menu -->
+	<vbox id="appmenu_webDeveloper_popup"> 
+		<splitmenu id="coomanPlus_appmenu_menu"
+							label="&cookiesmanagerplus.label;"
+							accesskey="&cookiesmanagerplus.accesskey;"
+							command="openCookieEditor"
+							iconic="true"
+							insertafter="appmenu_errorConsole"
+		>
+			<menupopup onpopupshowing="return coomanPlus.menu();">
+				<menuitem id="coomanPlus_appmenu_menuitem"
+									command="openCookieEditorCurrent"
+									tooltiptext="&cookiesmanagerplus.current.tooltip;"
+									accesskey="&cookiesmanagerplus.accesskey;"
+				/>
+			</menupopup>
+		</splitmenu>
+	</vbox>
+	<!-- Tools Menu -->
+<!-- not accessible with keyboard!
+	<menupopup id="menu_ToolsPopup">
+		<splitmenu	id="coomanPlus_tools_menu"
+								insertafter="menu_pageInfo"
+								label="&cookiesmanagerplus.label;"
+								accesskey="&cookiesmanagerplus.accesskey;"
+								command="openCookieEditor"
+								iconic="true"
+		>
+			<menupopup onpopupshowing="return coomanPlus.menu();">
+				<menuitem id="coomanPlus_tools_menuitem"
+									command="openCookieEditorCurrent"
+									tooltiptext="&cookiesmanagerplus.current.tooltip;"
+									accesskey="&cookiesmanagerplus.accesskey;"
+				/>
+			</menupopup>
+		</splitmenu>
+	</menupopup>
+-->
+</overlay>

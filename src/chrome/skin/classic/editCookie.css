@@ -1,0 +1,173 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
+
+spinbuttonsH
+{
+	-moz-binding: url("chrome://cookiesmanagerplus/skin/spinbuttons.xml#spinbuttonsH");
+}
+
+spinbuttonsV
+{
+	-moz-binding: url("chrome://cookiesmanagerplus/skin/spinbuttons.xml#spinbuttonsV");
+}
+
+checkbox[right="true"]
+{
+	-moz-binding: url("chrome://cookiesmanagerplus/skin/checkboxright.xml#checkbox");
+}
+
+.spinbutton,
+.spinbutton[disabled="true"]
+{
+	margin-right: 0 !important;
+}
+
+.up
+{
+	list-style-image: url("chrome://cookiesmanagerplus/skin/images/up.png");
+}
+
+.down
+{
+	list-style-image: url("chrome://cookiesmanagerplus/skin/images/down.png");
+}
+.up,
+.down,
+.up[disabled="true"],
+.down[disabled="true"]
+{
+	min-width: 0px;
+	min-height: 0px;
+	width: 9px;
+	cursor: pointer;
+	-moz-appearance: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	-moz-user-focus: ignore;
+}
+.up[disabled="true"],
+.down[disabled="true"]
+{
+	cursor: auto;
+	opacity: 0.4;
+}
+
+.up .button-box,
+.down .button-box,
+.up[disabled="true"] .button-box,
+.down[disabled="true"] .button-box
+{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+#vbox_pop
+{
+	font-weight: bold;
+}
+
+.lbl_pop
+{
+	font-weight: bold;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+.calendar
+{
+	cursor:pointer;
+	margin-left: 2px;
+	margin-right: 2px;
+	list-style-image: url("chrome://cookiesmanagerplus/skin/images/calendar.png");
+}
+
+.calendar[disabled="true"]
+{
+	cursor:auto;
+	list-style-image: url("chrome://cookiesmanagerplus/skin/images/calendar_dis.png");
+}
+
+#ifl_expires_date
+{
+	margin-right:0;
+	text-align: right;
+}
+
+#ifl_expires_time
+{
+	margin-left:0;
+}
+
+#secure
+{
+	list-style-image: url("chrome://cookiesmanagerplus/skin/images/secure.png");
+}
+
+#secure[disabled="true"]
+{
+	list-style-image: url("chrome://cookiesmanagerplus/skin/images/secure_dis.png");
+}
+
+#warning
+{
+	color: red;
+	text-decoration: blink;
+}
+
+#warning[disabled="true"]
+{
+	display: none;
+}
+
+#main
+{
+	min-width: 490px;
+}
+
+#main:-moz-system-metric(windows-classic)
+{
+	min-width: 515px;
+}
+
+menulist:not([disabled="true"]):not([id="ifl_value"])
+{
+	cursor: pointer;
+}
+
+#ifl_value[readonly="true"] html|*.menulist-editable-input,
+#ifl_value:not([type="multi"])[readonly="true"] html|*.menulist-editable-input,
+textbox[readonly="true"]
+{
+/*	background-color: -moz-Dialog;*/
+	color: GrayText;
+}
+#ifl_value:not([type="multi"]),
+#ifl_value[type="multi"][readonly="true"]
+{
+	padding-right: 4px;
+}
+#ifl_value,
+#ifl_value:not([type="multi"])[readonly="true"]
+{
+	cursor: default;
+	padding-left: 2px;
+}
+#ifl_value:not([type="multi"]) .menulist-dropmarker,
+#ifl_value[readonly="true"] .menulist-dropmarker,
+#ifl_value:not([type="multi"])[readonly="true"] .menulist-dropmarker
+{
+	display: none;
+}
+
+checkbox:not([label]),
+checkbox:not([label]) .checkbox-label-box
+{
+	margin: 0;
+	padding: 0;
+}
+
+button:[type="checkbox"]
+{
+	-moz-appearance: checkbox;
+}
